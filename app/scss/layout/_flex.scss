@@ -1,0 +1,10 @@
+@use '../utils/breakpoints' as *;
+
+.oks-slider{
+    display: flex;
+    width: min(100% - 1rem, 1920px);
+
+    @include breakpoint(sm){
+        display: grid;
+    }
+}
