@@ -3,9 +3,11 @@
 @forward "layout";
 @forward "abstructs";
 @forward "components";
+
 // @forward 'breakpoints';
 
 @use "../scss/abstructs/breakpoints" as *;
+@use '../scss/abstructs/functions' as func;
 
 .oks-slider {
   width: 100vw;
@@ -66,7 +68,8 @@
   &__content {
     position: absolute;
     top: 15%;
-    width: 71.25rem;
+    // width: 71.25rem;
+    width: min(100%, func.pixelToRem(1320));
     max-width: 80%;
     left: 50%;
     transform: translateX(-50%);
@@ -132,7 +135,7 @@
   }
 
   &__thimbnail-wrapper {
-    width: min(100%, 71.25rem);
+    width: min(100%, func.pixelToRem(1320));
     position: relative;
     // z-index: 100000 !important;
     display: flex;
@@ -219,14 +222,17 @@
     display: flex;
     gap: 0.7rem;
     align-items: center;
+    margin-right: func.pixelToRem(20);
     // bottom: 40px;
     // z-index: 100000000;
     @include breakpoint(sm) {
       align-self: flex-start;
+      margin-right: func.pixelToRem(25);
     }
     &::before{
       content: '';
-      width:300px;
+      // width:300px;
+      width:var(--width);
       height: 1px;
       background-color: #ffffff;
       z-index: 100;

@@ -1,5 +1,7 @@
 //700px 982px 
 
+@use'functions';
+
 $breakpoints: (
   'sm': 576px,
   'md': 768px,

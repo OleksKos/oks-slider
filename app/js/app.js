@@ -17,7 +17,11 @@ currentNumberOfSlider = document.querySelector(".oks-slider__current-number");
 let count = 1;
 
 
-thumbnail.style.width = 4 * 150 + 20*3 + "px";
+thumbnail.style.width = 3 * 150 + 20*3 + "px";
+const lineWidth = 2*154 + "px";
+
+const beforeArrowLine = document.querySelector('.oks-slider__arrows');
+beforeArrowLine.style.setProperty("--width", `${lineWidth}`);
 
 // thumbnail.appendChild(thumbnailItems[0]);
 let timeRunning = 2000;
