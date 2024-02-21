@@ -1,0 +1,421 @@
+@forward "globals";
+@forward "utils";
+@forward "layout";
+@forward "abstructs";
+@forward "components";
+// @forward 'breakpoints';
+
+@use "../scss/abstructs/breakpoints" as *;
+
+.oks-slider {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+
+  @include breakpoint(sm) {
+    justify-content:flex-start;
+  }
+
+  &__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+    // &::before{
+    //   content: '';
+    //   position: absolute;
+    //   top:0;
+    //   bottom: 0;
+    //   left: 0;
+    //   right: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   background-color: rgba(0, 0, 0, 0.4);
+    //   border-radius: 20px;
+    // }
+  }
+  // &__item{
+  //   &::before{
+  //     content: '';
+  //     position: absolute;
+  //     top:0;
+  //     bottom: 0;
+  //     left: 0;
+  //     right: 0;
+  //     width: 100%;
+  //     height: 100%;
+  //     background-color: rgba(0, 0, 0, 0.4);
+  //     border-radius: 20px;
+  //   }
+  // }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    position: absolute;
+    top: 15%;
+    width: 71.25rem;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    color: #fff;
+    text-shadow: 0 5px 10px #0004;
+    box-sizing: border-box;
+
+    @include breakpoint(md) {
+      padding-right: 0;
+      width: 100%;
+      top:10%;
+      max-width: 90%;
+    }
+  }
+
+  &__title,
+  &__brand {
+    font-weight: bold;
+    font-size: 5rem;
+    list-style: 1.3rem;
+    @include breakpoint(md) {
+      font-size: 2rem;
+    }
+  }
+
+  &__author {
+    display: inline-block;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: aqua;
+      bottom: -4px;
+    }
+    @include breakpoint(md) {
+      margin-bottom: 1.1rem;
+    }
+  }
+
+  &__buttons a:hover {
+    cursor: pointer;
+  }
+
+  &__brand {
+    color: #f1683a;
+  }
+
+  &__thumbnail {
+    // position: absolute;
+    // bottom: 100px;
+    // left: 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+    // width: 490px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    // justify-content: flsex-end;
+  }
+
+  &__thimbnail-wrapper {
+    width: min(100%, 71.25rem);
+    position: relative;
+    // z-index: 100000 !important;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+    
+    @include breakpoint(xl) {
+      align-items: center;
+      // width: 100%;
+      flex-wrap: wrap;
+      padding-left: 20px
+      ;
+    }
+  }
+  &__thumbnail-item {
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      // top:0;
+      bottom: 0;
+      left: 0%;
+      right: 0;
+      width: 100%;
+      height: 50%;
+      background-color: rgba(49, 49, 49, 0.5);
+      border-radius: 20px;
+      clip-path: ellipse(150% 150% at 100% 100%);
+    }
+  }
+
+  &__thumbnail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  &__thumbnail-content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    color: #fff;
+    padding: 0 4px 4px 4px;
+  }
+
+  &__thumbnail-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    overflow-x: hidden;
+    margin-bottom: 0.4rem;
+  }
+
+  &__thumbnail-description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    font-size: 0.8rem;
+  }
+  & span {
+    z-index: 100;
+    //font-size: 2rem;
+    color: #ffffff;
+  }
+
+  &__current-number {
+    font-size: 1.5rem;
+  }
+  &__total-number {
+    font-size: 1rem;
+  }
+  &__arrows {
+    // position: absolute;
+    // right: 15%;
+    // max-width: 30%;
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+    // bottom: 40px;
+    // z-index: 100000000;
+    @include breakpoint(sm) {
+      align-self: flex-start;
+    }
+    &::before{
+      content: '';
+      width:300px;
+      height: 1px;
+      background-color: #ffffff;
+      z-index: 100;
+
+      @include breakpoint(md) {
+        content: none;
+      }
+      
+    }
+  }
+
+  &__arrows button {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    border: 1px rgb(255, 255, 255) solid;
+    color: #fff;
+    font-size: large;
+    transition: 0.5s;
+    z-index: 100;
+  }
+  &__arrows button:hover {
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+  }
+
+  &__item:nth-child(1) {
+    z-index: 1;
+  }
+
+  &__item:nth-child(1) &__author,
+  &__item:nth-child(1) &__title,
+  &__item:nth-child(1) &__brand,
+  &__item:nth-child(1) &__description,
+  &__item:nth-child(1) &__buttons {
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showSlide 0.5s 1s linear forwards;
+  }
+
+  &__item:nth-child(1) &__author {
+    animation-delay: 1.2s;
+  }
+
+  &__item:nth-child(1) &__title {
+    animation-delay: 1.4s;
+  }
+
+  &__item:nth-child(1) &__brand {
+    animation-delay: 1.6s;
+  }
+
+  &__item:nth-child(1) &__description {
+    animation-delay: 1.8s;
+  }
+
+  &__item:nth-child(1) &__buttons {
+    animation-delay: 2s;
+  }
+
+  &__time {
+    width: 0%;
+    height: 5px;
+    border-color: brown;
+    position: absolute;
+    z-index: 1000 !important;
+    top: 0;
+    left: 0;
+  }
+
+  &.oks-next &__arrows button,
+  &.oks-prev &__arrows button {
+    pointer-events: none;
+  }
+}
+
+.oks-slider.oks-next .oks-slider__thumbnail {
+  animation: effectNext 0.5s linear 1 forwards;
+}
+
+@keyframes effectNext {
+  from {
+    transform: translateX(150px);
+  }
+}
+
+@keyframes showSlide {
+  to {
+    transform: translateY(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.oks-slider.oks-next .oks-slider__item:nth-child(1) img {
+  width: 150px;
+  height: 220px;
+
+  //   width: 9.375px;
+  // height: 13.75rem;
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  border-radius: 20px;
+  animation: showImage 0.5s linear 1 forwards;
+}
+
+@keyframes showImage {
+  to {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
+}
+
+.oks-slider.oks-next .oks-slider__thumbnail-item:nth-last-child(1) {
+  // width: 0;
+  overflow: hidden;
+  animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+@keyframes showThumbnail {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+.oks-slider.oks-prev .oks-slider__item:nth-child(2) {
+  z-index: 2;
+}
+
+.oks-slider.oks-prev .oks-slider__item:nth-child(2) img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  animation: hideImage 0.5s linear 1 forwards;
+}
+
+@keyframes hideImage {
+  to {
+    width: 150px;
+    height: 220px;
+    border-radius: 20px;
+    left: 50%;
+    bottom: 50px;
+    display: none;
+  }
+}
+
+.oks-slider.oks-prev .oks-slider__thumbnail-item:nth-child(1) {
+  animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+.oks-slider.oks-prev .oks-slider__item:nth-child(2) .oks-slider__author,
+.oks-slider.oks-prev .oks-slider__item:nth-child(2) .oks-slider__title,
+.oks-slider.oks-prev .oks-slider__item:nth-child(2) .oks-slider__description,
+.oks-slider.oks-prev .oks-slider__item:nth-child(2) .oks-slider__brand,
+.oks-slider.oks-prev .oks-slider__item:nth-child(2) .oks-slider__buttons {
+  animation: contentOut 1.5s linear 1 forwards;
+}
+
+@keyframes contentOut {
+  to {
+    transform: translateY(-150px);
+    filter: blur(20px);
+    opacity: 0;
+  }
+}
+
+.oks-slider.oks-next .oks-slider__time,
+.oks-slider.oks-prev .oks-slider__time {
+  animation: timeRunning 2s linear delay 1 forwards;
+}
+
+@keyframes timeRunning {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
