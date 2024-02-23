@@ -90,10 +90,16 @@
   &__brand {
     font-weight: bold;
     font-size: 5rem;
-    list-style: 1.3rem;
     @include breakpoint(md) {
       font-size: 2rem;
     }
+  }
+
+  &__description{
+    font-size: 1rem;
+    line-height: 1.4rem;
+    margin-top: 1rem;
+
   }
 
   &__author {
@@ -127,10 +133,10 @@
     width: max-content;
     z-index: 100;
     display: flex;
-    gap: 20px;
+    gap: func.pixelToRem(20);
     // width: 490px;
     overflow: hidden;
-    margin-bottom: 30px;
+    margin-bottom: func.pixelToRem(30);
     // justify-content: flsex-end;
   }
 
@@ -142,7 +148,7 @@
     align-items: flex-end;
     flex-direction: column;
     justify-content: flex-end;
-    padding-bottom: 30px;
+    padding-bottom: func.pixelToRem(30);
     
     @include breakpoint(xl) {
       align-items: center;
@@ -222,8 +228,9 @@
     display: flex;
     gap: 0.7rem;
     align-items: center;
-    margin-right: func.pixelToRem(20);
     // bottom: 40px;
+    // margin-right: func.pixelToRem(20);
+    margin-right: func.pixelToRem(20);
     // z-index: 100000000;
     @include breakpoint(sm) {
       align-self: flex-start;

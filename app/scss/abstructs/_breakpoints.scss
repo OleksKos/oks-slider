@@ -1,13 +1,21 @@
 //700px 982px 
 
-@use'functions';
+@use'functions' as func;
+
+// $breakpoints: (
+//   'sm': 576px,
+//   'md': 768px,
+//   'lg': 992px,
+//   'xl': 1200px,
+//   'xxl': 1400px,
+// );
 
 $breakpoints: (
-  'sm': 576px,
-  'md': 768px,
-  'lg': 992px,
-  'xl': 1200px,
-  'xxl': 1400px,
+  'sm': func.pixelToRem(576),
+  'md': func.pixelToRem(769),
+  'lg': func.pixelToRem(991),
+  'xl': func.pixelToRem(1200),
+  'xxl': func.pixelToRem(1400),
 );
 
 @mixin breakpoint($size){
