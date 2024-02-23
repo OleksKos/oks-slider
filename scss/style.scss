@@ -141,11 +141,11 @@
     margin-bottom: func.pixelToRem(30);
     // justify-content: flsex-end;
 
-    @include breakpoint(sm) {
-      position: absolute;
-      bottom: 50px;
-      left: 50%;
-    }
+    // @include breakpoint(sm) {
+    //   position: absolute;
+    //   bottom: 50px;
+    //   left: 50%;
+    // }
   }
 
   &__thimbnail-wrapper {
