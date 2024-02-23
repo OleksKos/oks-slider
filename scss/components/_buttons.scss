@@ -1,5 +1,7 @@
 @use '../globals/colors' as *;
 @use '../utils/fonts' as *;
+@use '../abstructs/functions' as func;
+@use '../abstructs/breakpoints' as *;
 .oks-slider__buttons{
 display: grid;
 // grid-template-columns: repeat(2,1fr);
@@ -11,6 +13,11 @@ display: grid;
 //   width: 100%;
 // //   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 210px));
+
+  @include breakpoint(sm) {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 156px));
+    padding: func.pixelToRem(0) func.pixelToRem(0);
+  }
 
 //   display: flex;
   flex-wrap: wrap;
@@ -26,8 +33,14 @@ margin-top: 30px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 15px 30px;
+        padding: func.pixelToRem(15) func.pixelToRem(30);
         transition: all 0.3s ease-in-out;
+        border-radius: 4px;
+
+        @include breakpoint(sm) {
+          padding: func.pixelToRem(10) func.pixelToRem(14);
+          letter-spacing: 0px;
+        }
     }
     & a:nth-child(2){
         background-color: transparent;

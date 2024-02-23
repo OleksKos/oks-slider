@@ -7,7 +7,7 @@
 // @forward 'breakpoints';
 
 @use "../scss/abstructs/breakpoints" as *;
-@use '../scss/abstructs/functions' as func;
+@use "../scss/abstructs/functions" as func;
 
 .oks-slider {
   width: 100vw;
@@ -19,7 +19,7 @@
   justify-content: center;
 
   @include breakpoint(sm) {
-    justify-content:flex-start;
+    justify-content: flex-start;
   }
 
   &__item {
@@ -81,8 +81,11 @@
     @include breakpoint(md) {
       padding-right: 0;
       width: 100%;
-      top:10%;
+      top: 10%;
       max-width: 90%;
+    }
+    @include breakpoint(sm) {
+      top: 4%;
     }
   }
 
@@ -95,11 +98,10 @@
     }
   }
 
-  &__description{
+  &__description {
     font-size: 1rem;
     line-height: 1.4rem;
     margin-top: 1rem;
-
   }
 
   &__author {
@@ -138,6 +140,12 @@
     overflow: hidden;
     margin-bottom: func.pixelToRem(30);
     // justify-content: flsex-end;
+
+    @include breakpoint(sm) {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+    }
   }
 
   &__thimbnail-wrapper {
@@ -149,13 +157,12 @@
     flex-direction: column;
     justify-content: flex-end;
     padding-bottom: func.pixelToRem(30);
-    
+
     @include breakpoint(xl) {
       align-items: center;
       // width: 100%;
       flex-wrap: wrap;
-      padding-left: 20px
-      ;
+      padding-left: 20px;
     }
   }
   &__thumbnail-item {
@@ -236,10 +243,10 @@
       align-self: flex-start;
       margin-right: func.pixelToRem(25);
     }
-    &::before{
-      content: '';
+    &::before {
+      content: "";
       // width:300px;
-      width:var(--width);
+      width: var(--width);
       height: 1px;
       background-color: #ffffff;
       z-index: 100;
@@ -247,7 +254,6 @@
       @include breakpoint(md) {
         content: none;
       }
-      
     }
   }
 
