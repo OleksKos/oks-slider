@@ -421,7 +421,7 @@
 
 .oks-slider.oks-next .oks-slider__time,
 .oks-slider.oks-prev .oks-slider__time {
-  animation: timeRunning 2s linear delay 1 forwards;
+  animation: timeRunning 2s linear 1 forwards;
 }
 
 @keyframes timeRunning {
