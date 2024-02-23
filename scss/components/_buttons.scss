@@ -11,7 +11,6 @@ display: grid;
 //   width: 100%;
 // //   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 210px));
- 
 
 //   display: flex;
   flex-wrap: wrap;
@@ -34,11 +33,21 @@ margin-top: 30px;
         background-color: transparent;
         color: rgb(253, 253, 253);
         border: 1px solid rgb(255, 255, 255);
-    }
-
-    & a:hover{
-        transform: scale(1.05);
         transition: all 0.3s ease-in-out;
     }
+
+    & a:nth-child(1):hover{
+        // transform: scale(1.05);
+        transition: all 0.3s ease-in-out;
+        color: $bg-color;;
+        background: $button-accent-color;
+    }
+    & a:nth-child(2):hover{
+      // transform: scale(1.05);
+      transition: all 0.3s ease-in-out;
+      color: $bg-color;;
+      background: $button-accent-color;
+      border: 1px solid $button-accent-color;
+  }
 }
 
