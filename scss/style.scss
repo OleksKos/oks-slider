@@ -18,8 +18,14 @@
   display: flex;
   justify-content: center;
 
+
+
   @include breakpoint(sm) {
     justify-content: flex-start;
+  }
+
+  @media (max-width:1000px) and (orientation: landscape) {
+    min-height: 218vh;
   }
 
   &__item {
@@ -93,7 +99,7 @@
   &__brand {
     font-weight: bold;
     font-size: 5rem;
-    @include breakpoint(md) {
+    @include breakpoint(xl) {
       font-size: 2rem;
     }
   }
